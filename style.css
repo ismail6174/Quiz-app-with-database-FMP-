@@ -1,0 +1,142 @@
+:root {
+      --bg-gradient: linear-gradient(135deg, #74ebd5, #acb6e5);
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --button-bg: linear-gradient(to right, #6a11cb, #2575fc);
+      --button-hover: linear-gradient(to right, #2575fc, #6a11cb);
+      --option-hover: #6a11cb;
+      --timer-bg: #f0f0f0;
+      --progress-bar-bg: #ddd;
+      --progress-color: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+    body.dark-mode {
+      --bg-gradient: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      --card-bg: #1e1e1e;
+      --text-color: #e0e0e0;
+      --button-bg: linear-gradient(to right, #00c6ff, #0072ff);
+      --button-hover: linear-gradient(to right, #0072ff, #00c6ff);
+      --option-hover: #00c6ff;
+      --timer-bg: #333;
+      --progress-bar-bg: #555;
+      --progress-color: linear-gradient(to right, #00c6ff, #0072ff);
+    }
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: var(--bg-gradient);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: center;
+      transition: background 0.5s ease;
+      overflow: hidden;
+    }
+    .quiz-container {
+      background: var(--card-bg);
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+      animation: slideIn 0.8s ease forwards;
+      color: var(--text-color);
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      color: var(--text-color);
+    }
+    #timer {
+      font-size: 2rem;
+      background: var(--timer-bg);
+      padding: 10px 20px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      display: inline-block;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      color: var(--text-color);
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+    p {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      min-height: 50px;
+      color: var(--text-color);
+    }
+    .option-group {
+      text-align: left;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+      transform: scale(1.2);
+    }
+    label {
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 15px;
+      color: var(--text-color);
+      transition: color 0.3s ease;
+    }
+    label:hover {
+      color: var(--option-hover);
+    }
+    button {
+      margin-top: 20px;
+      background: var(--button-bg);
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+    button:hover {
+      background: var(--button-hover);
+      transform: scale(1.05);
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .progress-bar {
+      height: 8px;
+      width: 100%;
+      background: var(--progress-bar-bg);
+      border-radius: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+    .progress {
+      height: 100%;
+      width: 0%;
+      background: var(--progress-color);
+      transition: width 0.4s ease;
+    }
+    .toggle-theme {
+      position: absolute;
+      top:-5px;
+      right: 20px;
+      background: none;
+      border: 2px solid white;
+      padding: 8px 16px;
+      border-radius: 30px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.4s, color 0.4s;
+    }
+    .toggle-theme:hover {
+      background: white;
+      color: #333;
+    }
